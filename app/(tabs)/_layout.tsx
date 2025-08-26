@@ -1,45 +1,79 @@
 import { Tabs } from 'expo-router';
-import React from 'react';
-import { Platform } from 'react-native';
+import { Image } from 'react-native';
 
-import { HapticTab } from '@/components/HapticTab';
-import { IconSymbol } from '@/components/ui/IconSymbol';
-import TabBarBackground from '@/components/ui/TabBarBackground';
-import { Colors } from '@/constants/Colors';
-import { useColorScheme } from '@/hooks/useColorScheme';
-
-export default function TabLayout() {
-  const colorScheme = useColorScheme();
-
+export default function TabLayout(){
   return (
     <Tabs
-      screenOptions={{
-        tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
+    screenOptions={{
+      tabBarLabelStyle: {
+        fontFamily: "Arial",
+        fontSize: 12,
+      },
+      tabBarStyle: {
+        backgroundColor: "#333",
+        height: 60,
+      },
+      tabBarInactiveTintColor: "#f0f0f0",
+      tabBarActiveTintColor: "#e0e0e0",
+    }}
+    >
+    <Tabs.Screen
+      name="Dashboard"
+      options={{
+        title: "Home",
+        tabBarIcon: () => (
+          <Image 
+          source={require('../../assets/images/icon.png')}
+        style={{
+          width: 20,
+          height: 20,
+        }}/>
+        ),
         headerShown: false,
-        tabBarButton: HapticTab,
-        tabBarBackground: TabBarBackground,
-        tabBarStyle: Platform.select({
-          ios: {
-            // Use a transparent background on iOS to show the blur effect
-            position: 'absolute',
-          },
-          default: {},
-        }),
-      }}>
+      }}/>
+    <Tabs.Screen
+      name="Inventory"
+      options={{
+        title: "My Items",
+        tabBarIcon: () => (
+          <Image 
+          source={require('../../assets/images/icon.png')}
+        style={{
+          width: 20,
+          height: 20,
+        }}/>
+        ),
+        headerShown: false,
+      }}/>
+    <Tabs.Screen
+      name="Profiles"
+      options={{
+        title: "Profiles",
+        tabBarIcon: () => (
+          <Image 
+          source={require('../../assets/images/icon.png')}
+        style={{
+          width: 20,
+          height: 20,
+        }}/>
+        ),
+        headerShown: false,
+      }}/>
       <Tabs.Screen
-        name="index"
-        options={{
-          title: 'Home',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="house.fill" color={color} />,
-        }}
-      />
-      <Tabs.Screen
-        name="explore"
-        options={{
-          title: 'Explore',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="paperplane.fill" color={color} />,
-        }}
-      />
+      name="Settings"
+      options={{
+        title: "Settings",
+        tabBarIcon: () => (
+          <Image 
+          source={require('../../assets/images/icon.png')}
+        style={{
+          width: 20,
+          height: 20,
+        }}/>
+        ),
+        headerShown: false,
+      }}/>
+
     </Tabs>
-  );
+  )
 }
