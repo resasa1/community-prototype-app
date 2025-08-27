@@ -1,17 +1,11 @@
 import { useFonts } from 'expo-font';
 import { router } from 'expo-router';
 import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import {
   ImageBackground, // Ditambahkan untuk handle layar kecil
   KeyboardAvoidingView, // Ditambahkan agar keyboard tidak menutupi input
-  Platform // Untuk behavior spesifik OS
-  ,
-
-
-
-
-
-
+  Platform, // Untuk behavior spesifik OS,
   ScrollView,
   StyleSheet,
   Text,
@@ -21,7 +15,10 @@ import {
 } from "react-native";
 import { SafeAreaView } from 'react-native-safe-area-context';
 
+
 export default function Index() {
+  const {t} = useTranslation();
+  
   // --- STATE MANAGEMENT ---
   // Mengelola value dari setiap input form dengan useState
   const [name, setName] = useState('');
