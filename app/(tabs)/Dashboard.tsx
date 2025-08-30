@@ -1,32 +1,26 @@
 import { router } from 'expo-router'
 import React from 'react'
-import { Text, TouchableOpacity, View } from 'react-native'
+import { StyleSheet, Text, TouchableOpacity } from 'react-native'
+import { SafeAreaView } from 'react-native-safe-area-context'
+import EventRenders from '../components/EventRenders'
+
 export default function dashboard() {
   return (
-    <View>
+    <SafeAreaView>
+      <Text style={{fontSize: 20, fontWeight: 'bold' }}>UPCOMING EVENTS</Text>
+      <EventRenders />
       <Text>dashboard</Text>
       <TouchableOpacity onPress={()=> router.push('/')}>
         <Text>Go Back</Text>
-        <Text>Go Back</Text>
-        <Text>Go Back</Text>
-        <Text>Go Back</Text>
-        <Text>Go Back</Text>
-        <Text>Go Back</Text>
-        <Text>Go Back</Text>
-        <Text>Go Back</Text>
-        <Text>Go Back</Text>
-        <Text>Go Back</Text>
-        <Text>Go Back</Text>
-        <Text>Go Back</Text>
-        <Text>Go Back</Text>
-        <Text>Go Back</Text>
-        <Text>Go Back</Text>
-        <Text>Go Back</Text>
-        <Text>Go Back</Text>
-        <Text>Go Back</Text>
-        <Text>Go Back</Text>
-        <Text>Go Back</Text>
       </TouchableOpacity>
-    </View>
+    </SafeAreaView>
   )
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  }
+})

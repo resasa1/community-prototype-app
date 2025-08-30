@@ -12,11 +12,15 @@ export const languageResources = {
     ina: {translation: ina},
 }
 
-i18n.use(initReactI18next).init({
-    compatibilityJSON: 'v3',
+i18n
+    .use(initReactI18next)
+    .init({
+    resource:languageResources,
     lng: 'eng',
-    fallbackLng: 'eng',
-    resources: languageResources,
+    fallbackLng: 'ina',
+    interpolation: {
+        escapeValue: false
+    }
 })
 
 export default i18n;

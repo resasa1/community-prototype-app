@@ -56,9 +56,9 @@ export default function Index() {
         >
           {/* Judul */}
           <View style={styles.titleContainer}>
-            <Text style={styles.titleText}>LETS START YOUR JOURNEY</Text>
+            <Text style={styles.titleText}>{t('join-us')}</Text>
             <TouchableOpacity>
-              <Text style={styles.subtitleText}>&apos; Double Dragon &apos;</Text>
+              <Text style={styles.subtitleText}>&apos;{t('name-club')}&apos;</Text>
             </TouchableOpacity>
           </View>
 

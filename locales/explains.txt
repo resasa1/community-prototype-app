@@ -1,0 +1,6 @@
+locales language for multi translation APP
+
+1. English (by default)
+2. Chinese
+3. Indonesian
+4. Japanese
